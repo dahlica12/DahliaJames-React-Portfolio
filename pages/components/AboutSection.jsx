@@ -2,7 +2,15 @@
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
-
+import {
+  AiFillLinkedin,
+  AiFillYoutube,
+  AiFillFacebook,
+  AiFillGithub,
+  AiFillInstagram,
+  AiFillTwitterCircle
+} from "react-icons/ai";
+import Link from "next/link";
 const TAB_DATA = [
   // {
   //   title: "Skills",
@@ -89,8 +97,57 @@ const AboutSection = () => {
           <div className="mt-8">
             {/* {TAB_DATA.find((t) => t.id === tab).content} */}
           </div>
+         
         </div>
+        
       </div>
+      <div className="socials flex flex-row gap-2">
+          <div className="py-10 mt-12 text-3xl items-center justify-between md:text-5xl flex flex-wrap lg:flex-row lg:flex-wrap text-blue-950 ">
+              <a
+                href="https://github.com/dahlica12"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dahlia-jo-james/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillLinkedin />
+              </a>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillYoutube />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100015895356257"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillInstagram />
+              </a>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillTwitterCircle />
+              </a>
+              {/* <FontAwesomeIcon icon={faSquareXTwitter} /> */}
+            </div>
+        </div>
     </section>
   );
 };

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Banner from "./components/Banner";
 import SkillsSection from "./components/SkillsSection";
 import HobbiesSection from "./components/HobbiesSection";
+import TheProjectSection from "./components/TheProjectSection";
 // import Head from "next/head";
 // import { BsFillMoonStarsFill } from "react-icons/bs";
 // import {
@@ -58,7 +59,8 @@ export default function Home() {
         <Banner />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
+        {/* <ProjectsSection /> */}
+        <TheProjectSection />
         <HobbiesSection />
         <EmailSection />
       </div>
