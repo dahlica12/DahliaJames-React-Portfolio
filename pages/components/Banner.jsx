@@ -20,7 +20,8 @@ const Banner = () => {
                   Hello, I&apos;m{" "}
                 </span>
                 <br></br>
-                <TypeAnimation
+                Dahlia James
+                {/* <TypeAnimation
                   sequence={[
                     "Judy",
                     1000,
@@ -34,27 +35,28 @@ const Banner = () => {
                   wrapper="span"
                   speed={50}
                   repeat={Infinity}
-                />
+                /> */}
               </h1>
               <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptuous.
+                Technical Support.          Software Development.
               </p>
               <div>
-                <Link
+                {/* <Link
                   href="/#contact"
                   className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
                 >
                   Hire Me
-                </Link>
-                <Link
-                  href="/"
+                </Link> */}
+                {/* <Link
+                  href="Dahlia_James_Resume.pdf"
                   className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
                 >
-                  <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                    Download CV
-                  </span>
-                </Link>
+                  <img src="resume-thumbnail.png" alt="Resume thumbnail"
+                  width="200"
+                  height="200"
+                   className="block bg-[#121212] hover:bg-slate-800 px-5 py-2">
+                  </img>
+                </Link> */}
               </div>
             </motion.div>
             <motion.div
@@ -65,11 +67,11 @@ const Banner = () => {
             >
               <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
                 <Image
-                  src="/images/atlas-background.jpg"
-                  alt="hero image"
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  width={300}
-                  height={300}
+                  src="/images/lotus-background.jpeg"
+                  alt="lotus image"
+                  className="rounded-full absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  width={400}
+                  height={400}
                 />
               </div>
             </motion.div>
@@ -80,26 +82,3 @@ const Banner = () => {
 
 export default Banner;
 
-
-{/* <section>
-<div className="text-center p-10 py-10 ">
-  <h2 className="text-5xl py-2 text-blue-950 font-medium md:text-7xl   lg:text-9xl dark:text-white">
-    Paul James
-  </h2>
-  <h3 className="text-2xl py-2 md:text-4xl dark:text-white">
-    Developer and IT specialist
-  </h3>
-  <p className="text-md py-5 leading-8 md:text-xl max-w-xl mx-auto dark:text-white">
-    22 Year old Computer Scientist with an interest in IT hardware
-    and backend development
-  </p>
-  <LocaleContext.Provider value={{ locale, setLocale }}>
-    <Suspense fallback={<Loading />}>
-      <div className="dark:text-white">
-        <Welcome />
-      </div>
-    </Suspense>
-  </LocaleContext.Provider>
-</div>
-<div className="relative mx-auto bg-gradient-to-b w-80 h-80 mt-5 mb-5 rounded-full overflow-hidden md:h-96 md:w-96">
-  {/* <Image src={profileImg} alt="Web Image 1" layout="fill" objectFit="cover" /> */}
