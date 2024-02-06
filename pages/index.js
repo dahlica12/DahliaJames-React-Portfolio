@@ -6,6 +6,8 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import Banner from "./components/Banner";
+import SkillsSection from "./components/SkillsSection";
+import HobbiesSection from "./components/HobbiesSection";
 // import Head from "next/head";
 // import { BsFillMoonStarsFill } from "react-icons/bs";
 // import {
@@ -55,7 +57,9 @@ export default function Home() {
       <div className="container mt-24 mx-auto px-12 py-4">
         <Banner />
         <AboutSection />
+        <SkillsSection />
         <ProjectsSection />
+        <HobbiesSection />
         <EmailSection />
       </div>
       <Footer />
