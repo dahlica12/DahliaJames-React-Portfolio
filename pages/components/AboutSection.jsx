@@ -32,7 +32,7 @@ const TAB_DATA = [
     id: "achievements",
     content: (
       <ul className="list-disc pl-2">
-        <li>Dean's List - 90% + average, Semester 1 </li>
+        <li>Deans List - 90% + average, Semester 1 </li>
         <li>Honours List - 85% + average, Semester 2</li>
       </ul>
     ),
@@ -52,16 +52,16 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/setup-desk.jpg" width={500} height={500} />
+        <Image src="/images/setup-desk.jpg" alt="Set up desk" width={500} height={500} />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          Hi, my name is Dahlia, and I'm 20 years old. In my third year of Computer Science, 
-          I've developed a genuine interest in IT Support and Software Development. 
-          I've been lucky enough to work with JavaScript, React, Git, Java, and C# among other technologies, and I'm always eager to expand my toolkit.
+          Hi, my name is Dahlia, and Im 20 years old. In my third year of Computer Science, 
+          Ive developed a genuine interest in IT Support and Software Development. 
+          Ive been lucky enough to work with JavaScript, React, Git, Java, and C# among other technologies, and Im always eager to expand my toolkit.
            I thrive  on the energy and creativity that come from teamwork and working together to solve problems. 
           With a positive attitude and always ready for a challenge, 
-          I'm eager to work on amazing applications and projects.
+          Im eager to work on amazing applications and projects.
           </p>
           <div className="flex flex-row justify-start mt-8">
             {/* <TabButton
