@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 const TheProjectSection = () => {
 return (
     <section id="projects">
@@ -16,10 +17,23 @@ return (
   <div className="mt-4">
     <h3 className="text-xl font-semibold text-white">Web Apps</h3>
     <ul className="list-disc pl-5 text-white">
+    <li>Rabia Patel Art</li>
+
+    <div className="w-32 h-32 relative rounded-lg overflow-hidden">
+    <a
+                href="https://github.com/dahlica12"></a>
+    <Image src="/projectspic/rabiapatelart.png" alt="Cooking 1" layout="fill" objectFit="cover" />
+  </div>
       <li>Virtual Art Gallery</li>
       <li>Library Management System</li>
       <li>Portfolio -HTML, CSS</li>
+      <div className="w-32 h-32 relative rounded-lg overflow-hidden">
+    <Image src="/projectspic/oldportfolio.png" alt="Cooking 1" layout="fill" objectFit="cover" />
+  </div>
       <li>The Fresh Tables</li>
+      <div className="w-32 h-32 relative rounded-lg overflow-hidden">
+    <Image src="/projectspic/thefreshtables.png" alt="Cooking 1" layout="fill" objectFit="cover" />
+  </div>
     
     </ul>
   </div>

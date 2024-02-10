@@ -2,6 +2,14 @@
 import React, { useState } from "react";
 // import GithubIcon from "../../../public/github-icon.svg";
 // import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import {
+  AiFillLinkedin,
+  AiFillYoutube,
+  AiFillFacebook,
+  AiFillGithub,
+  AiFillInstagram,
+  AiFillTwitterCircle
+} from "react-icons/ai";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,9 +22,11 @@ const EmailSection = () => {
       email: e.target.email.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
+      
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
+    const endpoint = "/api/send/route";
+    console.log(process.env.MAIL_USERNAME, process.env.MAIL_PASSWORD);
 
     // Form the request for sending data to the server.
     const options = {
@@ -53,6 +63,7 @@ const EmailSection = () => {
           {" "}
           I&apos;m open to connections! Send me a message, I&apos;ll try my best to get back to you.
         </p>
+      
       </div>
       <div>
         {emailSubmitted ? (

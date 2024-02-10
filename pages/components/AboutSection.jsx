@@ -100,6 +100,7 @@ const AboutSection = () => {
          
         </div>
         
+        
       </div>
       <div className="socials flex flex-row gap-2">
           <div className="py-10 mt-12 text-3xl items-center justify-between md:text-5xl flex flex-wrap lg:flex-row lg:flex-wrap text-blue-950 ">

@@ -1,5 +1,5 @@
-
-import { Suspense, useState } from "react";
+import { BsFillCloudMoonFill } from 'react-icons/bs'
+import { Suspense, useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import Banner from "./components/Banner";
 import SkillsSection from "./components/SkillsSection";
 import HobbiesSection from "./components/HobbiesSection";
-import TheProjectSection from "./components/TheProjectSection";
 // import Head from "next/head";
 // import { BsFillMoonStarsFill } from "react-icons/bs";
 // import {
@@ -42,7 +41,7 @@ import TheProjectSection from "./components/TheProjectSection";
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [lightMode, setLightMode] = useState(false);
   // function Loading() {
   //   return <>Loading</>;
   // }
@@ -52,19 +51,25 @@ export default function Home() {
   //   i18n.changeLanguage(event.target.value); //fr or eng
   // };
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem('theme') ?? 'light';
+    setLightMode(storedTheme === 'light');
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
-      <Navbar />
-      <div className="container mt-24 mx-auto px-12 py-4">
-        <Banner />
-        <AboutSection />
-        <SkillsSection />
-        {/* <ProjectsSection /> */}
-        <TheProjectSection />
-        <HobbiesSection />
-        <EmailSection />
+    <div className={lightMode ? "light" : "dark"}>
+      <main className={`flex min-h-screen flex-col ${lightMode ? "text-gray-900" : "bg-[#121212] text-white"}`}>
+        <Navbar lightMode={lightMode} setLightMode={setLightMode}/>
+        <div className="container mt-24 mx-auto px-12 py-4">
+          <Banner lightMode={lightMode}/>
+          <AboutSection lightMode={lightMode}/>
+          <SkillsSection lightMode={lightMode}/>
+          <ProjectsSection lightMode={lightMode}/>
+          <HobbiesSection lightMode={lightMode}/>
+          <EmailSection lightMode={lightMode}/>
+        </div>
+        <Footer />
+      </main>
       </div>
-      <Footer />
-    </main> 
   );
 }

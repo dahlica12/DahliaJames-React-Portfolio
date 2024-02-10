@@ -1,28 +1,39 @@
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from 'nodemailer';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    const { email, subject, message } = req.body;
 
-export async function POST(req, res) {
-  const { email, subject, message } = await req.json();
-  console.log(email, subject, message);
-  try {
-    const data = await resend.emails.send({
-      from: fromEmail,
-      to: [fromEmail, email],
-      subject: subject,
-      react: (
-        <>
-          <h1>{subject}</h1>
-          <p>Thank you for contacting us!</p>
-          <p>New message submitted:</p>
-          <p>{message}</p>
-        </>
-      ),
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD, 
+        
+      },
+      authMethod: 'PLAIN'
     });
-    return NextResponse.json(data);
-  } catch (error) {
-    return NextResponse.json({ error });
+    console.log(process.env.MAIL_USERNAME, process.env.MAIL_PASSWORD);
+
+    const mailOptions = {
+      from: `"Your Name" <${process.env.MAIL_USERNAME}>`, 
+      to: email, 
+      subject: subject, 
+      text: message, 
+    };
+
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log('Message sent: %s', info.messageId);
+      res.status(200).json({ message: 'Email sent successfully' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).json({ error: 'Error sending email' });
+    }
+  } else {
+    
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
+

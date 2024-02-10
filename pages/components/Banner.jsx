@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Banner = () => {
     return (
-        <section className="lg:py-16">
+        <section className="lg:py-16 ">
           <div className="grid grid-cols-1 sm:grid-cols-12">
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -16,9 +16,6 @@ const Banner = () => {
               className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
             >
               <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-                  Hello, I&apos;m{" "}
-                </span>
                 <br></br>
                 Dahlia James
                 {/* <TypeAnimation
@@ -37,7 +34,7 @@ const Banner = () => {
                   repeat={Infinity}
                 /> */}
               </h1>
-              <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
+              <p className="text-gray-900 dark:text-gray-300 text-base sm:text-lg mb-6 lg:text-xl">
                 Technical Support.          Software Development.
               </p>
               <div>
@@ -65,7 +62,7 @@ const Banner = () => {
               transition={{ duration: 0.5 }}
               className="col-span-4 place-self-center mt-4 lg:mt-0"
             >
-              <div className="rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
+              <div className="rounded-full bg-gray-200 dark:bg-gray-800 w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
                 <Image
                   src="/images/lotus-background.jpeg"
                   alt="lotus image"
@@ -76,6 +73,10 @@ const Banner = () => {
               </div>
             </motion.div>
           </div>
+          <div className="text-white mt-4">
+  <button type="button" className="bg-transparent border border-indigo-800 text-indigo-800 px-4 py-2 rounded-full hover:bg-indigo-800 hover:text-white transition-all duration-300">English</button>
+  <button type="button" className="bg-transparent border border-indigo-800 text-indigo-800 px-4 py-2 rounded-full hover:bg-indigo-800 hover:text-white transition-all duration-300 ml-2">French</button>
+</div>
         </section>
     );
 };
