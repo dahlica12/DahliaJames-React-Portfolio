@@ -9,7 +9,13 @@ module.exports = {
     extend: {
       fontFamily: {
         burtons: "burtons",
-      }
+      },
+      colors: {
+        light: {
+          DEFAULT: '#ffffff', 
+          text: '#000000', 
+        },
+      },
     },
   },
   plugins: [],
