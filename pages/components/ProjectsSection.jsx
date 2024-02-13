@@ -3,6 +3,7 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import Image from 'next/image';
 
 const projectsData = [
   {
@@ -107,11 +108,14 @@ function ProjectDetailsModal({ project, isOpen, onClose }) {
         </div>
         {hasImages && (
           <>
-            <img
-              src={project.images[currentImageIndex]}
-              alt={`Screenshot ${currentImageIndex + 1}`}
-              className="max-w-full h-auto object-contain mx-auto"
-            />
+            <Image
+  src={project.images[currentImageIndex]}
+  alt={`Screenshot ${currentImageIndex + 1}`}
+  width={500} // Specify desired width
+  height={300} // Specify desired height, adjust as needed
+  objectFit="contain"
+  className="mx-auto" // For centering, if additional styling is needed, consider wrapping in a div
+/>
             <div className="flex justify-center gap-4">
               <button onClick={prevImage} className="focus:outline-none">&lt;</button>
               <button onClick={nextImage} className="focus:outline-none">&gt;</button>
