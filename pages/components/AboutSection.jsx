@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from 'next/router';
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
@@ -11,7 +12,7 @@ import {
   AiFillTwitterCircle
 } from "react-icons/ai";
 import Link from "next/link";
-const TAB_DATA = [
+const sectionData = [
   // {
   //   title: "Skills",
   //   id: "skills",
@@ -48,9 +49,13 @@ const TAB_DATA = [
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("about");
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
+  const navigateTo = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }
   const handleTabChange = (id) => {
     startTransition(() => {
       setTab(id);
@@ -58,98 +63,35 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="text-white" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/setup-desk.jpg" alt="Set up desk" width={500} height={500} />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
-          <p className="text-base lg:text-lg">
-          Hi, my name is Dahlia, and Im 20 years old. In my third year of Computer Science, 
-          Ive developed a genuine interest in IT Support and Software Development. 
-          Ive been lucky enough to work with JavaScript, React, Git, Java, and C# among other technologies, and Im always eager to expand my toolkit.
+    <section id="about" className="py-12 px-4">
+      <div className="container mx-auto flex flex-col md:flex-row gap-8 items-center justify-between">
+        <div className="text-gray-800 dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <p className="text-base lg:text-lg mb-6">
+            Hi, my name is Dahlia, and I&apos;m 20 years old. In my third year of Computer Science, I&apos;ve developed a genuine interest in IT Support and and Software Development. 
+          Ive been lucky enough to work with JavaScript, React, Git, Java, and C# among other technologies, and I&apos;m always eager to expand my toolkit.
            I thrive  on the energy and creativity that come from teamwork and working together to solve problems. 
           With a positive attitude and always ready for a challenge, 
-          Im eager to work on amazing applications and projects.
+          I&apos;m eager to work on amazing applications and projects.
           </p>
-          <div className="flex flex-row justify-start mt-8">
-            {/* <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
-            >
-              {" "}
-              Skills{" "}
-            </TabButton> */}
-            <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
-            >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("achievements")}
-              active={tab === "achievements"}
-            >
-              {" "}
-              Achievements{" "}
-            </TabButton>
-          </div>
-          <div className="mt-8">
-            {/* {TAB_DATA.find((t) => t.id === tab).content} */}
-          </div>
-         
-        </div>
-        
-        
-      </div>
-      <div className="socials flex flex-row gap-2">
-          <div className="py-10 mt-12 text-3xl items-center justify-between md:text-5xl flex flex-wrap lg:flex-row lg:flex-wrap text-blue-950 ">
-              <a
-                href="https://github.com/dahlica12"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/dahlia-jo-james/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillLinkedin />
-              </a>
-              <a
-                href="https://www.youtube.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillYoutube />
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=100015895356257"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillFacebook />
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillTwitterCircle />
-              </a>
-              {/* <FontAwesomeIcon icon={faSquareXTwitter} /> */}
+        {sectionData.map((section) => (
+            <div key={section.id} className="mb-4">
+              <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
+              {section.content}
             </div>
+          ))}
         </div>
+        <div className="flex-shrink-0 w-[200px] h-[200px] md:w-[330px] md:h-[330px] relative rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+          <Image
+            src="/images/dahliaphoto.jpg"
+            alt="Dahlia James"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+      </div>
     </section>
+
   );
 };
 

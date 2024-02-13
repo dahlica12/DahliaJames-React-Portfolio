@@ -50,83 +50,64 @@ const EmailSection = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
-    >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
+    <section id="contact" className="py-10 px-6 sm:px-10 lg:py-16 lg:px-12 rounded-xl shadow-xl mx-auto max-w-4xl"
+             style={{
+               color: '#333'
+             }}>
+      <div className="text-center mb-10">
+        <h2 className="text-3xl leading-9 font-bold sm:text-4xl"
+            style={{ color: '#554D4B' }}>
           Let&apos;s Connect
-        </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          I&apos;m open to connections! Send me a message, I&apos;ll try my best to get back to you.
+        </h2>
+        <p className="mt-4 text-lg text-gray-800">
+          I&apos;m open to connections! Send me a message, and I&apos;ll get back to you as soon as I can.
         </p>
-      
       </div>
-      <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
+      {emailSubmitted ? (
+        <div className="text-center">
+          <p className="text-lg font-semibold" style={{ color: '#4A90E2' }}>
             Email sent successfully!
           </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Your email
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium"
+                     style={{ color: '#554D4B' }}>
+                Your Email
               </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="johndoe@google.com"
-              />
+              <input type="email" name="email" id="email" required
+                     className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 transition duration-150 ease-in-out"
+                     placeholder="johndoe@example.com" />
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium"
+                     style={{ color: '#554D4B' }}>
                 Subject
               </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Hello..."
-              />
+              <input type="text" name="subject" id="subject" required
+                     className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 transition duration-150 ease-in-out"
+                     placeholder="Hello..." />
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium"
+                   style={{ color: '#554D4B' }}>
+              Message
+            </label>
+            <textarea name="message" id="message" rows="4"
+                      className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-purple-500 focus:border-purple-500 transition duration-150 ease-in-out"
+                      placeholder="Let's talk about..."></textarea>
+          </div>
+          <div className="text-right">
+            <button type="submit"
+                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-purple-500 hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-150 ease-in-out">
               Send Message
             </button>
-          </form>
-        )}
-      </div>
+          </div>
+        </form>
+      )}
     </section>
   );
 };

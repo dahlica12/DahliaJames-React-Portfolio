@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from 'next/image';
 const HobbiesSection = () => {
     const [selectedHobby, setSelectedHobby] = useState('');
+    const [expandedHobby, setExpandedHobby] = useState(null);
 
   // Array of cooking images
   const cookingImages = [
@@ -18,18 +19,36 @@ const HobbiesSection = () => {
   const hobbiesInfo = {
     cooking: {
       title: "Cooking",
-      description: "Exploring culinary arts from various cultures.",
-      images: cookingImages,
+      description: "I got into cooking a while back, spending time in the kitchen to experiment with different ingredients. It's my go-to activity for relaxation and creativity, especially when it comes to trying out various cuisines. Cooking has also become a way to connect with my family, as we share meals and explore new dishes together. ",
+      images: [
+        '/hobbies/pasta.jpg',
+        '/hobbies/rice2.jpg',
+        '/hobbies/palakpaneer.jpg',
+        '/hobbies/paneer.jpg',
+        '/hobbies/tacos.jpg',
+        '/hobbies/brownies.jpg',
+        '/hobbies/curry.jpg',
+      ],
     },
     swimming: {
       title: "Swimming",
-      description: "Swimming for fitness and relaxation in open waters and pools.",
-      images: ['/hobbies/swimming.jpg'], // Assuming you have a placeholder image for swimming
+      description: "Ive been into swimming since my childhood, going to my local sports complex every month. Recently, Ive taken on the role of teaching a friend how to swim. Its turned out to be a straightforward and effective hobby, not just for staying in shape but also for spending quality time with friends..",
+      images: ['/hobbies/swimming.jpg'], 
     },
     languages: {
       title: "Learning Languages",
-      description: "Diving into new languages and cultures to broaden my horizons.",
-      images: ['/hobbies/languages.jpg'], // Assuming you have a placeholder image for languages
+      description: "Ive always been fascinated by languages, so Ive taken up learning Spanish and Hindi. Diving into these languages opens up new worlds for me, allowing me to appreciate different cultures and ways of thinking. Its a challenge, but its incredibly rewarding to slowly start understanding and communicating in another language.",
+      images: ['/hobbies/languages.jpg'], 
+    },
+    camping: {
+      title: "Camping/Hiking",
+      description: "I enjoy the blend of adventure and peace from camping. It's all about the outdoors, from pitching tents to fireside meals, and it gives me an opportunity to appreciate nature.",
+      images: ['/hobbies/languages.jpg'], 
+    },
+    photography: {
+      title: "Photography",
+      description: "I've delved into photography, capturing moments and views that speak to me.",
+      images: ['/hobbies/languages.jpg'], 
     },
   };
 
@@ -40,36 +59,37 @@ const HobbiesSection = () => {
   const hideModal = () => {
     setSelectedHobby('');
   };
-    return (
-        <section id="hobbies" className="text-white mt-4 mb-8 md:mb-12">
-          <h2 className="text-center text-4xl font-bold">
-        My Hobbies
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-        {Object.entries(hobbiesInfo).map(([key, { title, images }]) => (
-          <div key={key} className="hobby-card cursor-pointer" onClick={() => showModal(key)}>
-            <Image src={images[0]} alt={title} layout="responsive" width={100} height={100} objectFit="cover" className="rounded-lg" />
-            <h3 className="text-xl font-semibold mt-2">{title}</h3>
-          </div>
-        ))}
-      </div>
 
-      {/* Modal for selected hobby */}
-      {selectedHobby && (
-        <div className="modal-backdrop" onClick={hideModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h3 className="text-xl font-bold">{hobbiesInfo[selectedHobby].title}</h3>
-            <p>{hobbiesInfo[selectedHobby].description}</p>
-            <div className="grid grid-cols-3 gap-4 mt-4">
-              {hobbiesInfo[selectedHobby].images.map((src, index) => (
-                <Image key={index} src={src} alt={`${hobbiesInfo[selectedHobby].title} ${index + 1}`} width={250} height={250} objectFit="cover" />
-              ))}
+  const toggleHobby = (hobby) => {
+    setExpandedHobby(expandedHobby === hobby ? null : hobby); // Collapse if already expanded, else expand
+  };
+
+    return (
+        <section id="hobbies" className="mt-4 mb-8 md:mb-24">
+      <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mb-8">My Hobbies</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Object.entries(hobbiesInfo).map(([key, { title, description, images }]) => (
+            <div key={key} className="hobby-card cursor-pointer rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 p-4 text-white transform transition duration-500 hover:scale-105">
+              <h3 className="text-xl font-semibold">{title}</h3>
+              <p className="text-sm mt-2">{description}</p>
+              {expandedHobby === key && (
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  {images.map((src, index) => (
+                    <div key={index} className="w-full h-32 relative">
+                      <Image src={src} alt={`${title} ${index + 1}`} layout="fill" objectFit="cover" className="rounded-lg" />
+                    </div>
+                  ))}
+                </div>
+              )}
+              <button onClick={() => toggleHobby(key)} className="mt-4 w-full bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-2 px-4 rounded-full transition-opacity duration-150 ease-in-out">
+                {expandedHobby === key ? 'Hide Images' : 'Show Images'}
+              </button>
             </div>
-            <button onClick={hideModal} className="mt-4 bg-white bg-opacity-50 hover:bg-opacity-70 text-black font-bold py-2 px-4 rounded-full transition-opacity duration-150 ease-in-out">Close</button>
-          </div>
+          ))}
         </div>
-      )}
-        </section>
+      </div>
+    </section>
     )
     }
     export default HobbiesSection;
