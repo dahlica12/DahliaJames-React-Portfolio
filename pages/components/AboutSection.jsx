@@ -83,7 +83,7 @@ const AboutSection = () => {
         </div>
         <div className="flex-shrink-0 w-[200px] h-[200px] md:w-[330px] md:h-[330px] relative rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800">
           <Image
-            src="/images/dahliaphoto.jpg"
+           src="/images/dahliaphoto.JPG.png"
             alt="Dahlia James"
             fill
             className="object-cover"
