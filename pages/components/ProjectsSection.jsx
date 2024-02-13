@@ -26,7 +26,7 @@ const projectsData = [
   {
     id: 3,
     title: "The Fresh Tables",
-    description: "Project 3 description",
+    description: "An online restaurant service offering customized menu and meals",
     defaultImage: "projectspic/thefreshtables.png",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -35,7 +35,7 @@ const projectsData = [
   {
     id: 4,
     title: "Hindi Go App",
-    description: "Project 4 description",
+    description: "A friendly application to learn conversational Hindi. This consists of a journal format where users can manage phrases, and participate in different mediums of learning, such as audio lessons, flashcards and a quiz. ",
     defaultImage: "projectspic/hindihome.png",
     images: [
       "projectspic/hindihome.png",
@@ -50,7 +50,7 @@ const projectsData = [
   {
     id: 5,
     title: "Virtual Art Gallery",
-    description: "virtual art gallery",
+    description: "virtual art gallery made in a team of 3 using the ASP.NET framework",
     defaultImage: "projectspic/artgallery.png",
     tag: ["All", "Web"],
     gitUrl: "/",
@@ -59,7 +59,7 @@ const projectsData = [
   {
     id: 6,
     title: "Library Management System",
-    description: "Project 5 description",
+    description: "Online library management system made solo",
     defaultImage: "projectspic/librarysystem.png",
     tag: ["All", "Web"],
     gitUrl: "/",

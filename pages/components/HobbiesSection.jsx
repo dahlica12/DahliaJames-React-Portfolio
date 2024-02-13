@@ -42,7 +42,7 @@ const HobbiesSection = () => {
     },
     camping: {
       title: "Camping/Hiking",
-      description: "I've taken to camping for its blend of adventure and peace. It's all about the outdoors, from pitching tents to fireside meals, offering a fresh way to appreciate nature.",
+      description: "I enjoy the blend of adventure and peace from camping. It's all about the outdoors, from pitching tents to fireside meals, and it gives me an opportunity to appreciate nature.",
       images: ['/hobbies/languages.jpg'], 
     },
     photography: {
