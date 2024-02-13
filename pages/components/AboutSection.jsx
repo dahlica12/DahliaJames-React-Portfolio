@@ -85,8 +85,8 @@ const AboutSection = () => {
           <Image
             src="/images/dahliaphoto.jpg"
             alt="Dahlia James"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
           />
         </div>
       </div>
