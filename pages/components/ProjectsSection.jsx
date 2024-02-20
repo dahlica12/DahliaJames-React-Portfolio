@@ -20,6 +20,15 @@ const projectsData = [
     title: "HTML, CSS Portfolio Website with Huma",
     description: "Partnered Portfolio project from User Interface Design Class in Champlain College",
     defaultImage: "projectspic/oldportfolio.png",
+    images: [
+      "/projectspic/humadahls1.png",
+      "/projectspic/humadahls2.png",
+      "/projectspic/humadahls3.png",
+      "/projectspic/humadahls4.png",
+      "/projectspic/humadahls5.png",
+      "/projectspic/humadahls6.png",
+      "/projectspic/humadahls7.png",
+    ],
     tag: ["All", "Web"],
     gitUrl: "https://github.com/dahlica12/james-saeed-portfolio",
     previewUrl: "/",
@@ -39,10 +48,10 @@ const projectsData = [
     description: "A friendly application to learn conversational Hindi. This consists of a journal format where users can manage phrases, and participate in different mediums of learning, such as audio lessons, flashcards and a quiz. ",
     defaultImage: "projectspic/hindihome.png",
     images: [
-      "projectspic/hindihome.png",
-      "projectspic/hindivocab.png",
-      "projectspic/hindiflashcards.png",
-      "projectspic/hindiaudio.png"
+      "/projectspic/hindihome.png",
+      "/projectspic/hindivocab.png",
+      "/projectspic/hindiflashcards.png",
+      "/projectspic/hindiaudio.png"
     ],
     tag: ["All", "Mobile"],
     gitUrl: "/",
@@ -51,10 +60,10 @@ const projectsData = [
   {
     id: 5,
     title: "Virtual Art Gallery",
-    description: "virtual art gallery made in a team of 3 using the ASP.NET framework",
+    description: "Virtual Art Gallery made in a team of 3 using the ASP.NET framework",
     defaultImage: "projectspic/artgallery.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Sprytte/ArtworkGallery",
     previewUrl: "/",
   },
   {
@@ -65,6 +74,31 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+  },
+  {
+    id: 7,
+    title: "Chatroom Site",
+    description: "PHP Chatroom Site made in a group of 3, with authentication",
+    defaultImage: "/projectspic/php2.png",
+    images: [
+      "/projectspic/php1.png",
+      "/projectspic/php3.png",
+    ],
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/swafit/phpProject",
+    previewUrl: "https://www.youtube.com/watch?v=n9zfsq7VPlg",
+  },
+  {
+    id: 8,
+    title: "Adventurelytical Game",
+    description: "2D Platform Coin Rush Adventure Game made in a group of 4 using Unity and C#",
+    defaultImage: "projectspic/adventure.png",
+    images: [
+      "/projectspic/AdventureLytical.png",
+    ],
+    tag: ["All", "Game"],
+    gitUrl: "https://github.com/PaulJ2001/AdventureLytical_Coin-Rush_Unity_FinalProject",
+    previewUrl: "https://www.dropbox.com/scl/fi/us1vbi0npl5vdys103gwk/AdventuricalCoinRun_Gameplay_No-Commentary.mp4?rlkey=6mh47r23wwhuhaiien4o4crcc&e=1&dl=0",
   },
 ];
 
@@ -128,7 +162,7 @@ function ProjectDetailsModal({ project, isOpen, onClose }) {
     </div>
   );
 }
-const categories = ["All", "Web", "Mobile"];
+const categories = ["All", "Web", "Mobile", "Game"];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Banner from "./components/Banner";
 import SkillsSection from "./components/SkillsSection";
 import HobbiesSection from "./components/HobbiesSection";
+import WorkExperience from './components/WorkExperience';
 // import Head from "next/head";
 // import { BsFillMoonStarsFill } from "react-icons/bs";
 // import {
@@ -66,6 +67,7 @@ export default function Home() {
           <SkillsSection lightMode={lightMode}/>
           <ProjectsSection lightMode={lightMode}/>
           <HobbiesSection lightMode={lightMode}/>
+          <WorkExperience lightMode={lightMode}/>
           <EmailSection lightMode={lightMode}/>
         </div>
         <Footer />
