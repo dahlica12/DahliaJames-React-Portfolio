@@ -16,19 +16,27 @@ const HobbiesSection = () => {
     '/hobbies/curry.jpg',
   ];
 
+  const campingImages = [
+    '/hobbies/camping1.jpg',
+    '/hobbies/camping2.jpg',
+    '/hobbies/camping3.jpg',
+    '/hobbies/camping4.jpg',
+  ];
+
+  const photographyImages = [
+    '/hobbies/photo1.jpg',
+    '/hobbies/photo2.jpg',
+    '/hobbies/photo3.jpg',
+    '/hobbies/photo4.jpg',
+    '/hobbies/photo5.jpg',
+    '/hobbies/photo6.jpg',
+  ]
+
   const hobbiesInfo = {
     cooking: {
       title: "Cooking",
       description: "I got into cooking a while back, spending time in the kitchen to experiment with different ingredients. It's my go-to activity for relaxation and creativity, especially when it comes to trying out various cuisines. Cooking has also become a way to connect with my family, as we share meals and explore new dishes together. ",
-      images: [
-        '/hobbies/pasta.jpg',
-        '/hobbies/rice2.jpg',
-        '/hobbies/palakpaneer.jpg',
-        '/hobbies/paneer.jpg',
-        '/hobbies/tacos.jpg',
-        '/hobbies/brownies.jpg',
-        '/hobbies/curry.jpg',
-      ],
+      images: cookingImages,
     },
     swimming: {
       title: "Swimming",
@@ -43,12 +51,24 @@ const HobbiesSection = () => {
     camping: {
       title: "Camping/Hiking",
       description: "I enjoy the blend of adventure and peace from camping. It's all about the outdoors, from pitching tents to fireside meals, and it gives me an opportunity to appreciate nature.",
-      images: ['/hobbies/languages.jpg'], 
+      images: [
+        '/hobbies/camping1.jpg',
+        '/hobbies/camping2.jpg',
+        '/hobbies/camping3.jpg',
+        '/hobbies/camping4.jpg',
+      ] 
     },
     photography: {
       title: "Photography",
       description: "I've delved into photography, capturing moments and views that speak to me.",
-      images: ['/hobbies/languages.jpg'], 
+      images: [
+        '/hobbies/photo1.jpg',
+        '/hobbies/photo2.jpg',
+        '/hobbies/photo3.jpg',
+        '/hobbies/photo4.jpg',
+        '/hobbies/photo5.jpg',
+        '/hobbies/photo6.jpg',
+      ]
     },
   };
 
