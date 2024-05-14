@@ -1,0 +1,145 @@
+{
+    "about": {
+      "title": "À propos de moi",
+      "description": "Bonjour, je m'appelle Dahlia et j'ai 21 ans. En troisième année de Science Informatique, j'ai développé un véritable intérêt pour le support informatique et le développement de logiciels. Je suis toujours désireuse d'élargir ma boîte à outils, je m'épanouis grâce à l'énergie et à la créativité qui découlent du travail d'équipe et de la collaboration pour résoudre des problèmes. Avec une attitude positive et toujours prête à relever un défi, je suis impatiente de travailler sur des applications et des projets incroyables.",
+      "education": "Technologie de la science informatique. Collège Champlain, Saint-Lambert",
+      "achievements": [
+        "Liste du doyen - moyenne de 90% +, Semestre 1",
+        "Liste d'honneur - moyenne de 85% +, Semestre 2"
+      ]
+    },
+    "workExperience": {
+      "title": "Expérience Professionnelle",
+      "experience1": {
+        "date": "mars 2024 –- août 2024",
+        "company": "Opal-RT Technologies",
+        "role": "Stagiaire IT/Applicatif",
+        "responsibility1": "Défini et développé des scripts et interfaces pour améliorer le flux de travail des employés au sein de l'équipe Applications chez OPAL-RT.",
+        "responsibility2": "Surveillé les notifications d'application et fourni un support utilisateur, assurant la continuité opérationnelle et améliorant l'efficacité de l'équipe."
+      },
+      "experience2": {
+        "date": "mai 2023 –- août 2023",
+        "company": "Wiptec Inc.",
+        "role": "Associé d'Entrepôt",
+        "responsibility1": "Effectué des tâches d'entrepôt, incluant la gestion des inventaires, l'exécution des commandes et la collaboration avec les membres de l'équipe.",
+        "responsibility2": "Opéré des équipements d'entrepôt spécialisés, contribuant à l'exécution sans faille des opérations."
+      },
+      "experience3": {
+        "date": "juin 2022 –- avril 2023",
+        "company": "Maxi",
+        "role": "Caissier de Magasin d'Alimentation",
+        "responsibility1": "Fourni un service clientèle exceptionnel avec une approche amicale.",
+        "responsibility2": "Géré efficacement les transactions et répondu aux demandes des clients.",
+        "responsibility3": "Supervisé brièvement une équipe de magasin d'alimentation, assurant un fonctionnement fluide."
+      },
+      "experience4": {
+        "date": "août 2020 –- août 2021",
+        "company": "Harvey's",
+        "role": "Caissier",
+        "responsibility1": "Géré les transactions en espèces et par carte de crédit avec précision et rapidité, maintenant un tiroir-caisse équilibré.",
+        "responsibility2": "Collaboré avec les membres de l'équipe pour maintenir un environnement de magasin propre et organisé."
+      }
+    },
+    "skills": {
+      "title": "Mes Compétences",
+      "softwareDevelopmentTools": "Outils de Développement Logiciel",
+      "databases": "Bases de Données",
+      "programmingLanguages": "Langages de Programmation",
+      "frameworks": "Frameworks",
+      "operatingSystems": "Systèmes d'Exploitation"
+    },
+    "hobbies": {
+      "title": "Mes Loisirs",
+      "cooking": {
+        "title": "Cuisine",
+        "description": "J'ai commencé à cuisiner il y a quelque temps, en expérimentant différents ingrédients. C'est mon activité de détente et de créativité préférée, surtout avec diverses cuisines."
+      },
+      "swimming": {
+        "title": "Natation",
+        "description": "Je nage depuis mon enfance et récemment, j'ai commencé à enseigner à un ami. C'est un moyen simple et efficace de rester en forme et de passer du temps de qualité."
+      },
+      "languages": {
+        "title": "Apprentissage des langues",
+        "description": "Fasciné par les langues, j'ai commencé à apprendre l'espagnol et le hindi. Plonger dans ces langues me permet d'apprécier différentes cultures et modes de pensée."
+      },
+      "photography": {
+        "title": "Photographie",
+        "description": "Je me suis lancé dans la photographie, capturant des moments et des vues qui me parlent. Des clichés de la nature aux paysages urbains, cela me permet de conserver des souvenirs de manière unique."
+      }
+    },
+    "emailSection": {
+      "title": "Prenons Contact",
+      "description": "Je suis ouvert aux connexions ! Envoyez-moi un message, et je vous répondrai dès que possible.",
+      "emailSent": "E-mail envoyé avec succès !",
+      "yourEmail": "Votre Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "sendMessage": "Envoyer le Message",
+      "placeholderEmail": "johndoe@example.com",
+      "placeholderSubject": "Bonjour...",
+      "placeholderMessage": "Parlons de..."
+    },
+
+    "banner": {
+      "name": "Dahlia James",
+      "technicalSupport": "Support Technique.",
+      "softwareDevelopment": "Développement Logiciel",
+      "quote": "Le ciel n'est pas la limite, c'est le début.",
+      "downloadResume": "Télécharger CV"
+    },
+
+    "navbar": {
+      "about": "À Propos",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "hobbies": "Loisirs",
+      "workExperience": "Expérience Professionnelle",
+      "contact": "Contact",
+      "english": "Anglais",
+      "french": "Français"
+    },
+    "projects": {
+      "project1": {
+        "title": "Site Web d'Art de Rabia Patel",
+        "description": "Une plateforme de commerce électronique pour l'artiste Rabia Patel, offrant des comptes utilisateurs, l'achat d'œuvres d'art, et des options pour des commissions ou contacter l'artiste."
+      },
+      "project2": {
+        "title": "Site Web Portfolio HTML, CSS avec Huma",
+        "description": "Un projet de portfolio collaboratif issu d'une classe de Conception d'Interface Utilisateur au Collège Champlain, mettant en avant les compétences en conception web."
+      },
+      "project3": {
+        "title": "Les Tables Fraîches",
+        "description": "Un service de restaurant en ligne qui propose un menu personnalisable et une planification de repas, adaptés aux préférences des utilisateurs."
+      },
+      "project4": {
+        "title": "App Hindi Go",
+        "description": "Une application conviviale conçue pour faciliter l'apprentissage de l'hindi conversationnel à travers des méthodes interactives telles que le journaling, les leçons audio, les flashcards et les quiz."
+      },
+      "project5": {
+        "title": "Galerie d'Art Virtuelle",
+        "description": "Une galerie d'art virtuelle développée par une équipe utilisant le framework ASP.NET, présentant diverses œuvres d'art numériquement."
+      },
+      "project6": {
+        "title": "Système de Gestion de Bibliothèque",
+        "description": "Un système de gestion de bibliothèque en ligne conçu pour la gestion efficace des opérations de la bibliothèque et de la gestion des utilisateurs."
+      },
+      "project7": {
+        "title": "Site de Chatroom",
+        "description": "Un site de chat basé sur PHP créé dans le cadre d'un projet de groupe, comportant une authentification utilisateur et des capacités de chat interactives."
+      },
+      "project8": {
+        "title": "Jeu Adventurelytical",
+        "description": "Un jeu de plateforme en 2D développé dans Unity par une équipe de quatre, combinant aventure et défis analytiques."
+      }
+    },
+    "common": {
+      "title": "Mes Projets",
+      "github": "GitHub",
+      "livePreview": "Aperçu en Direct",
+      "noAdditionalImages": "Aucune image supplémentaire disponible.",
+      "close": "Fermer"
+    }
+
+    
+  }
+  

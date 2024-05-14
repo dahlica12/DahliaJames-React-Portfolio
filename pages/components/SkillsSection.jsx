@@ -1,72 +1,151 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image"; 
+import React, { useState, useEffect } from "react";
+import { useTranslation } from 'next-i18next';
 import { FaDatabase, FaCode, FaTools, FaReact, FaUsers, FaDesktop} from 'react-icons/fa';
 const SkillsSection = () => {
+
+  const { t, ready } = useTranslation();
+  const [contentReady, setContentReady] = useState(false);
+  
+  useEffect(() => {
+    if (ready) {
+      setContentReady(true);
+    }
+  }, [ready]);
+
+  if (!contentReady) {
+    return <div>Loading...</div>; 
+  }
+
 return (
   <section id="skills" className="py-12 px-4">
-  <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mt-4 mb-8">
-    My Skills
-  </h2>
-  <div className="container mx-auto">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-800 dark:text-white">
-      <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
-        <FaTools className="text-purple-500 dark:text-purple-300 text-3xl mb-2 mx-auto" />
-        <h3 className="text-xl font-semibold">Software Development Tools</h3>
-        <ul className="list-none">
-          <li>Git</li>
-          <li>Docker</li>
-          <li>Jira</li>
-          <li>IntelliJ</li>
-          <li>VS Code</li>
-        </ul>
-      </div>
+      <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mt-4 mb-8">
+      {t('skills.title')}
+      </h2>
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+          {/* Software Development Tools */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{t('skills.softwareDevelopmentTools')}</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <Image src="/skills/github.png" alt="Git" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Git</p>
+              </div>
+              <div>
+                <Image src="/skills/docker.png" alt="Docker" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Docker</p>
+              </div>
+              <div>
+                <Image src="/skills/jira.png" alt="Jira" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Jira</p>
+              </div>
+              <div>
+                <Image src="/skills/intelliJ.png" alt="IntelliJ" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">IntelliJ</p>
+              </div>
+              <div>
+                <Image src="/skills/vscode.png" alt="VS Code" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">VS Code</p>
+              </div>
+            </div>
+          </div>
 
-      <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
-        <FaDatabase className="text-purple-500 dark:text-purple-300 text-3xl mb-2 mx-auto" /> 
-        <h3 className="text-xl font-semibold">Databases</h3>
-        <ul className="list-none">
-          <li>MySQL</li>
-          <li>MongoDB</li>
-          <li>PostgreSQL</li>
-          <li>Firebase</li>
-        </ul>
-      </div>
-      
-      <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
-        <FaCode className="text-purple-500 dark:text-purple-300 text-3xl mb-2 mx-auto" /> 
-        <h3 className="text-xl font-semibold">Programming Languages</h3>
-        <ul className="list-none">
-          <li>JavaScript</li>
-          <li>Python</li>
-          <li>Java</li>
-          <li>C#</li>
-          <li>Swift</li>
-        </ul>
-      </div>
-      
-      <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
-        <FaReact className="text-purple-500 dark:text-purple-300 text-3xl mb-2 mx-auto" />
-        <h3 className="text-xl font-semibold">Frameworks</h3>
-        <ul className="list-none">
-          <li>SpringBoot</li>
-          <li>React.js</li>
-          <li>.NET</li>
-          <li>Angular</li>
-        </ul>
-      </div>
-      
-      <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
-        <FaDesktop className="text-purple-500 dark:text-purple-300 text-3xl mb-2 mx-auto" /> 
-        <h3 className="text-xl font-semibold">Operating Systems</h3>
-        <ul className="list-none">
-          <li>Windows 11/10</li>
-          <li>MacOS</li>
-          <li>Linux ( using Windows Virtual Machine)</li>
-        </ul>
-      </div>
+          {/* Databases */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{t('skills.databases')}</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <Image src="/skills/mysql.png" alt="MySQL" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">MySQL</p>
+              </div>
+              <div>
+                <Image src="/skills/mongodb.png" alt="MongoDB" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">MongoDB</p>
+              </div>
+              <div>
+                <Image src="/skills/postgre.jpg" alt="PostgreSQL" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">PostgreSQL</p>
+              </div>
+              <div>
+                <Image src="/skills/firebase.png" alt="Firebase" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Firebase</p>
+              </div>
+            </div>
+          </div>
 
-      <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
+          {/* Programming Languages */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{t('skills.programmingLanguages')}</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <Image src="/skills/javascript.png" alt="JavaScript" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">JavaScript</p>
+              </div>
+              <div>
+                <Image src="/skills/python.png" alt="Python" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Python</p>
+              </div>
+              <div>
+                <Image src="/skills/java.png" alt="Java" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Java</p>
+              </div>
+              <div>
+                <Image src="/skills/c.png" alt="C#" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">C#</p>
+              </div>
+              <div>
+                <Image src="/skills/swift.jpg" alt="Swift" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Swift</p>
+              </div>
+            </div>
+          </div>
+      
+     {/* Frameworks */}
+     <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{t('skills.frameworks')}</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <Image src="/skills/react.png" alt="React.js" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">React.js</p>
+              </div>
+              <div>
+                <Image src="/skills/springboot.png" alt="Spring Boot" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Spring Boot</p>
+              </div>
+              <div>
+                <Image src="/skills/net.png" alt=".NET" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">.NET</p>
+              </div>
+              <div>
+                <Image src="/skills/angular.png" alt="Angular" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Angular</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Operating Systems */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{t('skills.operatingSystems')}</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <Image src="/skills/windows.png" alt="Windows" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Windows 10/11</p>
+              </div>
+              <div>
+                <Image src="/skills/macos.png" alt="MacOS" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">MacOS</p>
+              </div>
+              <div>
+                <Image src="/skills/linux.png" alt="Linux" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Linux</p>
+              </div>
+            </div>
+          </div>
+
+      {/* <div className="skill-card bg-white dark:bg-[#222222] rounded-lg p-4 hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg">
         <FaUsers className="text-purple-500 dark:text-purple-300 text-3xl mb-2 mx-auto" /> 
         <h3 className="text-xl font-semibold">Soft Skills</h3>
         <ul className="list-none">
@@ -74,13 +153,13 @@ return (
           <li>Teamwork and Collaboration</li>
           <li>Problem-Solving</li>
         </ul>
-      </div>
+      </div> */}
     </div>
-    <div className="text-center mt-8">
+    {/* <div className="text-center mt-8">
           <Link href="/Dahlia_James_Resume.pdf" className="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out shadow-lg">
             <span className="ml-3">Download Resume</span>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
 )

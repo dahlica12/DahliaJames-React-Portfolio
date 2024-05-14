@@ -9,6 +9,8 @@ import Banner from "./components/Banner";
 import SkillsSection from "./components/SkillsSection";
 import HobbiesSection from "./components/HobbiesSection";
 import WorkExperience from './components/WorkExperience';
+import { motion } from 'framer-motion';
+import '../outside-components/languageConfig';
 // import Head from "next/head";
 // import { BsFillMoonStarsFill } from "react-icons/bs";
 // import {
@@ -43,6 +45,17 @@ import WorkExperience from './components/WorkExperience';
 
 export default function Home() {
   const [lightMode, setLightMode] = useState(false);
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeInOut"
+      }
+    }
+  };
   // function Loading() {
   //   return <>Loading</>;
   // }
@@ -63,12 +76,60 @@ export default function Home() {
         <Navbar lightMode={lightMode} setLightMode={setLightMode}/>
         <div className="container mt-24 mx-auto px-12 py-4">
           <Banner lightMode={lightMode}/>
-          <AboutSection lightMode={lightMode}/>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="section"
+          >
+            <AboutSection lightMode={lightMode}/>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="section"
+          >
           <SkillsSection lightMode={lightMode}/>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="section"
+          >
           <ProjectsSection lightMode={lightMode}/>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="section"
+          >
           <HobbiesSection lightMode={lightMode}/>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="section"
+          >
           <WorkExperience lightMode={lightMode}/>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={sectionVariants}
+            className="section"
+          >
           <EmailSection lightMode={lightMode}/>
+          </motion.div>
         </div>
         <Footer />
       </main>

@@ -1,115 +1,67 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from 'next/image';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from 'next-i18next';
+
 const HobbiesSection = () => {
-    const [selectedHobby, setSelectedHobby] = useState('');
-    const [expandedHobby, setExpandedHobby] = useState(null);
+    const { t, ready } = useTranslation();
+  const [contentReady, setContentReady] = useState(false);
+  
+  useEffect(() => {
+    if (ready) {
+      setContentReady(true);
+    }
+  }, [ready]);
 
-  // Array of cooking images
-  const cookingImages = [
-    '/hobbies/pasta.jpg',
-    '/hobbies/rice2.jpg',
-    '/hobbies/palakpaneer.jpg',
-    '/hobbies/paneer.jpg',
-    '/hobbies/tacos.jpg',
-    '/hobbies/brownies.jpg',
-    '/hobbies/curry.jpg',
-  ];
-
-  const campingImages = [
-    '/hobbies/camping1.jpg',
-    '/hobbies/camping2.jpg',
-    '/hobbies/camping3.jpg',
-    '/hobbies/camping4.jpg',
-  ];
-
-  const photographyImages = [
-    '/hobbies/photo1.jpg',
-    '/hobbies/photo2.jpg',
-    '/hobbies/photo3.jpg',
-    '/hobbies/photo4.jpg',
-    '/hobbies/photo5.jpg',
-    '/hobbies/photo6.jpg',
-  ]
-
-  const hobbiesInfo = {
-    cooking: {
-      title: "Cooking",
-      description: "I got into cooking a while back, spending time in the kitchen to experiment with different ingredients. It's my go-to activity for relaxation and creativity, especially when it comes to trying out various cuisines. Cooking has also become a way to connect with my family, as we share meals and explore new dishes together. ",
-      images: cookingImages,
-    },
-    swimming: {
-      title: "Swimming",
-      description: "Ive been into swimming since my childhood, going to my local sports complex every month. Recently, Ive taken on the role of teaching a friend how to swim. Its turned out to be a straightforward and effective hobby, not just for staying in shape but also for spending quality time with friends..",
-      images: ['/hobbies/swimming.jpg'], 
-    },
-    languages: {
-      title: "Learning Languages",
-      description: "Ive always been fascinated by languages, so Ive taken up learning Spanish and Hindi. Diving into these languages opens up new worlds for me, allowing me to appreciate different cultures and ways of thinking. Its a challenge, but its incredibly rewarding to slowly start understanding and communicating in another language.",
-      images: ['/hobbies/languages.jpg'], 
-    },
-    camping: {
-      title: "Camping/Hiking",
-      description: "I enjoy the blend of adventure and peace from camping. It's all about the outdoors, from pitching tents to fireside meals, and it gives me an opportunity to appreciate nature.",
-      images: [
-        '/hobbies/camping1.jpg',
-        '/hobbies/camping2.jpg',
-        '/hobbies/camping3.jpg',
-        '/hobbies/camping4.jpg',
-      ] 
-    },
-    photography: {
-      title: "Photography",
-      description: "I've delved into photography, capturing moments and views that speak to me.",
-      images: [
-        '/hobbies/photo1.jpg',
-        '/hobbies/photo2.jpg',
-        '/hobbies/photo3.jpg',
-        '/hobbies/photo4.jpg',
-        '/hobbies/photo5.jpg',
-        '/hobbies/photo6.jpg',
-      ]
-    },
-  };
-
-  const showModal = (hobby) => {
-    setSelectedHobby(hobby);
-  };
-
-  const hideModal = () => {
-    setSelectedHobby('');
-  };
-
-  const toggleHobby = (hobby) => {
-    setExpandedHobby(expandedHobby === hobby ? null : hobby); // Collapse if already expanded, else expand
-  };
+  if (!contentReady) {
+    return <div>Loading...</div>; 
+  }
+    const hobbiesInfo = {
+        cooking: {
+            title: t('hobbies.cooking.title'),
+            description: t('hobbies.cooking.description'),
+            images: '/hobbies/pasta.jpg'
+        },
+        swimming: {
+            title: t('hobbies.swimming.title'),
+            description: t('hobbies.swimming.description'),
+            images: '/hobbies/swimming.jpg'
+        },
+        languages: {
+            title: t('hobbies.languages.title'),
+            description: t('hobbies.languages.description'),
+            images: '/hobbies/languages.jpg'
+        },
+        photography: {
+            title: t('hobbies.photography.title'),
+            description: t('hobbies.photography.description'),
+            images: '/hobbies/photo1.jpg'
+        }
+    };
 
     return (
         <section id="hobbies" className="mt-4 mb-8 md:mb-24">
-      <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mb-8">My Hobbies</h2>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Object.entries(hobbiesInfo).map(([key, { title, description, images }]) => (
-            <div key={key} className="hobby-card cursor-pointer rounded-lg shadow-lg overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 p-4 text-white transform transition duration-500 hover:scale-105">
-              <h3 className="text-xl font-semibold">{title}</h3>
-              <p className="text-sm mt-2">{description}</p>
-              {expandedHobby === key && (
-                <div className="mt-4 grid grid-cols-2 gap-2">
-                  {images.map((src, index) => (
-                    <div key={index} className="w-full h-32 relative">
-                      <Image src={src} alt={`${title} ${index + 1}`} layout="fill" objectFit="cover" className="rounded-lg" />
+            <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mb-8">
+                {t('hobbies.title')}
+            </h2>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8">
+                {Object.entries(hobbiesInfo).map(([key, { title, description, images }]) => (
+                    <div key={key} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div className="relative w-full h-48 sm:h-64">
+                            <Image src={images} alt={title} layout="fill" objectFit="cover" />
+                        </div>
+                        <div className="p-4">
+                            <h3 className="text-xl font-semibold">{title}</h3>
+                            <p className="text-sm">{description}</p>
+                        </div>
                     </div>
-                  ))}
-                </div>
-              )}
-              <button onClick={() => toggleHobby(key)} className="mt-4 w-full bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-2 px-4 rounded-full transition-opacity duration-150 ease-in-out">
-                {expandedHobby === key ? 'Hide Images' : 'Show Images'}
-              </button>
+                ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-    )
-    }
-    export default HobbiesSection;
+        </section>
+    );
+};
+
+export default HobbiesSection;
