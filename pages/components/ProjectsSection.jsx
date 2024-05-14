@@ -1,110 +1,27 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
-const projectsData = [
-  {
-    id: 1,
-    title: "Rabia Patel Art Website",
-    description: "An Online e-commerce for the artist Rabia Patel. Services include: user account, purchasing artworks, contacting artist for commission or assistance",
-    defaultImage: "projectspic/rabiapatelart.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/swafit/RabiaPatelArt",
-    previewUrl: "http://rabiapatelart.com/",
-  },
-  {
-    id: 2,
-    title: "HTML, CSS Portfolio Website with Huma",
-    description: "Partnered Portfolio project from User Interface Design Class in Champlain College",
-    defaultImage: "projectspic/oldportfolio.png",
-    images: [
-      "/projectspic/humadahls1.png",
-      "/projectspic/humadahls2.png",
-      "/projectspic/humadahls3.png",
-      "/projectspic/humadahls4.png",
-      "/projectspic/humadahls5.png",
-      "/projectspic/humadahls6.png",
-      "/projectspic/humadahls7.png",
-    ],
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/dahlica12/james-saeed-portfolio",
-    previewUrl: "/",
-  },
-  {
-    id: 3,
-    title: "The Fresh Tables",
-    description: "An online restaurant service offering customized menu and meals",
-    defaultImage: "projectspic/thefreshtables.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 4,
-    title: "Hindi Go App",
-    description: "A friendly application to learn conversational Hindi. This consists of a journal format where users can manage phrases, and participate in different mediums of learning, such as audio lessons, flashcards and a quiz. ",
-    defaultImage: "projectspic/hindihome.png",
-    images: [
-      "/projectspic/hindihome.png",
-      "/projectspic/hindivocab.png",
-      "/projectspic/hindiflashcards.png",
-      "/projectspic/hindiaudio.png"
-    ],
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 5,
-    title: "Virtual Art Gallery",
-    description: "Virtual Art Gallery made in a team of 3 using the ASP.NET framework",
-    defaultImage: "projectspic/artgallery.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/Sprytte/ArtworkGallery",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Library Management System",
-    description: "Online library management system made solo",
-    defaultImage: "projectspic/librarysystem.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 7,
-    title: "Chatroom Site",
-    description: "PHP Chatroom Site made in a group of 3, with authentication",
-    defaultImage: "/projectspic/php2.png",
-    images: [
-      "/projectspic/php1.png",
-      "/projectspic/php3.png",
-    ],
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/swafit/phpProject",
-    previewUrl: "https://www.youtube.com/watch?v=n9zfsq7VPlg",
-  },
-  {
-    id: 8,
-    title: "Adventurelytical Game",
-    description: "2D Platform Coin Rush Adventure Game made in a group of 4 using Unity and C#",
-    defaultImage: "projectspic/adventure.png",
-    images: [
-      "/projectspic/AdventureLytical.png",
-    ],
-    tag: ["All", "Game"],
-    gitUrl: "https://github.com/PaulJ2001/AdventureLytical_Coin-Rush_Unity_FinalProject",
-    previewUrl: "https://www.dropbox.com/scl/fi/us1vbi0npl5vdys103gwk/AdventuricalCoinRun_Gameplay_No-Commentary.mp4?rlkey=6mh47r23wwhuhaiien4o4crcc&e=1&dl=0",
-  },
-];
+
 
 function ProjectDetailsModal({ project, isOpen, onClose }) {
-
+  const { t, ready } = useTranslation();
+  const [contentReady, setContentReady] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  useEffect(() => {
+    if (ready) {
+      setContentReady(true);
+    }
+  }, [ready]);
+
+  if (!contentReady) {
+    return <div>Loading...</div>; 
+  }
+  
 
   const hasImages = project.images && project.images.length > 0;
   if (!isOpen || !project) return null;
@@ -136,7 +53,7 @@ function ProjectDetailsModal({ project, isOpen, onClose }) {
           )}
           {project.previewUrl && (
             <a href={project.previewUrl} target="_blank" rel="noopener noreferrer" className="inline-block mx-2 text-blue-500 hover:text-blue-700">
-              Live Preview
+              {t('common.livePreview')}
             </a>
           )}
         </div>
@@ -156,7 +73,7 @@ function ProjectDetailsModal({ project, isOpen, onClose }) {
             </div>
           </>
         )}
-        {!hasImages && <p>No additional images available.</p>}
+        {!hasImages && <p>{t('common.noAdditionalImages')}</p>}
         <button onClick={onClose} className="p-2 focus:outline-none">Close</button>
       </div>
     </div>
@@ -165,13 +82,122 @@ function ProjectDetailsModal({ project, isOpen, onClose }) {
 const categories = ["All", "Web", "Mobile", "Game"];
 
 const ProjectsSection = () => {
+
+
+  const { t, ready } = useTranslation();
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const [selectedProject, setSelectedProject] = useState(null); 
+  const [contentReady, setContentReady] = useState(false);
 
+  useEffect(() => {
+    if (ready) {
+      setContentReady(true);
+    }
+  }, [ready]);
+
+  if (!contentReady) {
+    return <div>Loading...</div>; 
+  }
+  const projectsData = [
+    {
+      id: 1,
+      title: t("projects.project1.title"),
+      description: t("projects.project1.description"),
+      defaultImage: "projectspic/rabiapatelart.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/swafit/RabiaPatelArt",
+      previewUrl: "http://rabiapatelart.com/",
+    },
+    {
+      id: 2,
+      title: t("projects.project2.title"),
+      description: t("projects.project2.description"),
+      defaultImage: "projectspic/oldportfolio.png",
+      images: [
+        "/projectspic/humadahls1.png",
+        "/projectspic/humadahls2.png",
+        "/projectspic/humadahls3.png",
+        "/projectspic/humadahls4.png",
+        "/projectspic/humadahls5.png",
+        "/projectspic/humadahls6.png",
+        "/projectspic/humadahls7.png",
+      ],
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/dahlica12/james-saeed-portfolio",
+      previewUrl: "/",
+    },
+    {
+      id: 3,
+      title: "The Fresh Tables",
+      description: t("projects.project3.description"),
+      defaultImage: "projectspic/thefreshtables.png",
+      tag: ["All", "Web"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 4,
+      title: "Hindi Go App",
+      description: t("projects.project4.description"),
+      defaultImage: "projectspic/hindihome.png",
+      images: [
+        "/projectspic/hindihome.png",
+        "/projectspic/hindivocab.png",
+        "/projectspic/hindiflashcards.png",
+        "/projectspic/hindiaudio.png"
+      ],
+      tag: ["All", "Mobile"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 5,
+      title: "Virtual Art Gallery",
+      description: t("projects.project5.description"),
+      defaultImage: "projectspic/artgallery.png",
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/Sprytte/ArtworkGallery",
+      previewUrl: "/",
+    },
+    {
+      id: 6,
+      title: t("projects.project6.title"),
+      description: t("projects.project6.description"),
+      defaultImage: "projectspic/librarysystem.png",
+      tag: ["All", "Web"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 7,
+      title: t("projects.project7.title"),
+      description: t("projects.project7.description"),
+      defaultImage: "/projectspic/php2.png",
+      images: [
+        "/projectspic/php1.png",
+        "/projectspic/php3.png",
+      ],
+      tag: ["All", "Web"],
+      gitUrl: "https://github.com/swafit/phpProject",
+      previewUrl: "https://www.youtube.com/watch?v=n9zfsq7VPlg",
+    },
+    {
+      id: 8,
+      title: "Adventurelytical Game",
+      description: t("projects.project8.description"),
+      defaultImage: "projectspic/adventure.png",
+      images: [
+        "/projectspic/AdventureLytical.png",
+      ],
+      tag: ["All", "Game"],
+      gitUrl: "https://github.com/PaulJ2001/AdventureLytical_Coin-Rush_Unity_FinalProject",
+      previewUrl: "https://www.dropbox.com/scl/fi/us1vbi0npl5vdys103gwk/AdventuricalCoinRun_Gameplay_No-Commentary.mp4?rlkey=6mh47r23wwhuhaiien4o4crcc&e=1&dl=0",
+    },
+  ];
   // Function to open the modal with the selected project's details
   const openProjectModal = (project) => {
     setSelectedProject(project);
@@ -204,7 +230,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="mb-16 md:mb-24">
       <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white mt-4 mb-8 md:mb-12">
-        My Projects
+      {t('common.title')}
       </h2>
       <div className="flex justify-start mb-6 ml-8">
   <div className="relative w-64"> 

@@ -2,6 +2,9 @@
 import { useRouter } from 'next/router';
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
+import { useTranslation } from 'react-i18next';
+
+
 import TabButton from "./TabButton";
 import {
   AiFillLinkedin,
@@ -50,6 +53,7 @@ const sectionData = [
 
 const AboutSection = () => {
   const [tab, setTab] = useState("about");
+  const { t } = useTranslation();
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
@@ -61,29 +65,34 @@ const AboutSection = () => {
       setTab(id);
     });
   };
+  
 
   return (
     <section id="about" className="py-12 px-4">
       <div className="container mx-auto flex flex-col md:flex-row gap-8 items-center justify-between">
         <div className="text-gray-800 dark:text-white">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('about.title')}</h2>
           <p className="text-base lg:text-lg mb-6">
-            Hi, my name is Dahlia, and I&apos;m 20 years old. In my third year of Computer Science, I&apos;ve developed a genuine interest in IT Support and and Software Development. 
-          Ive been lucky enough to work with JavaScript, React, Git, Java, and C# among other technologies, and I&apos;m always eager to expand my toolkit.
-           I thrive  on the energy and creativity that come from teamwork and working together to solve problems. 
-          With a positive attitude and always ready for a challenge, 
-          I&apos;m eager to work on amazing applications and projects.
+            {t('about.description')}
           </p>
-        {sectionData.map((section) => (
-            <div key={section.id} className="mb-4">
-              <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
-              {section.content}
-            </div>
-          ))}
+          <div className="mb-4">
+            <h3 className="text-xl font-semibold mb-2">{t('about.education')}</h3>
+            <ul className="list-disc pl-2">
+              <li>{t('about.education')}</li>
+            </ul>
+          </div>
+          <div className="mb-4">
+            {/* <h3 className="text-xl font-semibold mb-2">{t('about.achievements')}</h3> */}
+            <ul className="list-disc pl-2">
+  {t('about.achievements', { returnObjects: true }).map((achievement, index) => (
+    <li key={index}>{achievement}</li>
+  ))}
+</ul>
+          </div>
         </div>
-        <div className="flex-shrink-0 w-[200px] h-[200px] md:w-[330px] md:h-[330px] relative rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+        <div className="flex-shrink-0 w-[200px] h-[200px] md:w-[330px] md:h-[330px] relative rounded-md overflow-hidden bg-gray-200 dark:bg-gray-800 shadow-lg">
           <Image
-           src="/images/dahliaphoto.JPG.png"
+            src="/images/dahliapic.jpg"
             alt="Dahlia James"
             fill
             className="object-cover"

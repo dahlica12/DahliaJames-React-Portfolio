@@ -1,0 +1,146 @@
+{
+    "about": {
+      "title": "About Me",
+      "description": "Hi, my name is Dahlia, and I'm 21 years old. In my third year of Computer Science, I've developed a genuine interest in IT Support and Software Development. I'm always eager to expand my toolkit, I thrive on the energy and creativity that come from teamwork and working together to solve problems. With a positive attitude and always ready for a challenge, I'm eager to work on amazing applications and projects.",
+      "education": "Computer Science Technology. Champlain College, Saint-Lambert",
+      "achievements": [
+        "Deans List - 90% + average, Semester 1",
+        "Honours List - 85% + average, Semester 2"
+      ]
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "experience1": {
+        "date": "March 2024 -- Aug 2024",
+        "company": "Opal-RT Technologies",
+        "role": "IT/Applicatif Intern",
+        "responsibility1": "Defined and developed scripts and interfaces for enhancing employee workflow within the Applications team at OPAL-RT.",
+        "responsibility2": "Monitored application notifications and provided user support, ensuring operational continuity and enhancing team efficiency."
+      },
+      "experience2": {
+        "date": "May 2023 -- Aug 2023",
+        "company": "Wiptec Inc.",
+        "role": "Warehouse Associate",
+        "responsibility1": "Performed warehouse duties, including inventory management, order fulfillment, and collaboration with team members.",
+        "responsibility2": "Operated specialized warehouse equipment, contributing to the seamless execution of operations."
+      },
+      "experience3": {
+        "date": "Jun 2022 -- Apr 2023",
+        "company": "Maxi",
+        "role": "Grocery Store Cashier",
+        "responsibility1": "Provided outstanding customer service with a friendly approach.",
+        "responsibility2": "Efficiently managed transactions and addressed inquiries.",
+        "responsibility3": "Briefly supervised a grocery store team, ensuring smooth operations."
+      },
+      "experience4": {
+        "date": "Aug 2020 -- Aug 2021",
+        "company": "Harvey's",
+        "role": "Cashier",
+        "responsibility1": "Handled cash and credit card transactions with accuracy and speed, maintaining a balanced cash drawer.",
+        "responsibility2": "Collaborated with team members to maintain a clean and organized store environment."
+      }
+    },
+    "skills": {
+      "title": "My Skills",
+      "softwareDevelopmentTools": "Software Development Tools",
+      "databases": "Databases",
+      "programmingLanguages": "Programming Languages",
+      "frameworks": "Frameworks",
+      "operatingSystems": "Operating Systems"
+    },
+    "hobbies": {
+      "title": "My Hobbies",
+      "cooking": {
+        "title": "Cooking",
+        "description": "I got into cooking a while back, experimenting with different ingredients. It's my go-to activity for relaxation and creativity, especially with various cuisines."
+      },
+      "swimming": {
+        "title": "Swimming",
+        "description": "I've been swimming since childhood, and recently, I've started teaching a friend. It's a straightforward and effective way to stay in shape and spend quality time."
+      },
+      "languages": {
+        "title": "Learning Languages",
+        "description": "Fascinated by languages, I've taken up Spanish and Hindi. Diving into these languages allows me to appreciate different cultures and ways of thinking."
+      },
+      "photography": {
+        "title": "Photography",
+        "description": "I've delved into photography, capturing moments and views that speak to me. From nature shots to urban landscapes, it allows me to preserve memories uniquely."
+      }
+    },
+    "emailSection": {
+      "title": "Let's Connect",
+      "description": "I'm open to connections! Send me a message, and I'll get back to you as soon as I can.",
+      "emailSent": "Email sent successfully!",
+      "yourEmail": "Your Email",
+      "subject": "Subject",
+      "message": "Message",
+      "sendMessage": "Send Message",
+      "placeholderEmail": "johndoe@example.com",
+      "placeholderSubject": "Hello...",
+      "placeholderMessage": "Let's talk about..."
+    },
+
+    "banner": {
+      "name": "Dahlia James",
+      "technicalSupport": "Technical Support.",
+      "softwareDevelopment": "Software Development",
+      "quote": "The sky's not the limit, it's the beginning.",
+      "downloadResume": "Download Resume"
+    },
+
+    "navbar": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "hobbies": "Hobbies",
+      "workExperience": "Work Experience",
+      "contact": "Contact",
+      "english": "English",
+      "french": "French"
+    },
+
+    
+      "projects": {
+        "project1": {
+          "title": "Rabia Patel Art Website",
+          "description": "An online e-commerce platform for artist Rabia Patel, featuring user accounts, artwork purchases, and options for commissioning or contacting the artist."
+        },
+        "project2": {
+          "title": "HTML, CSS Portfolio Website with Huma",
+          "description": "A collaborative portfolio project from a User Interface Design Class at Champlain College, showcasing web design skills."
+        },
+        "project3": {
+          "title": "The Fresh Tables",
+          "description": "An online restaurant service that offers a customizable menu and meal planning, tailored to user preferences."
+        },
+        "project4": {
+          "title": "Hindi Go App",
+          "description": "A user-friendly app designed to facilitate learning conversational Hindi through interactive methods like journaling, audio lessons, flashcards, and quizzes."
+        },
+        "project5": {
+          "title": "Virtual Art Gallery",
+          "description": "A virtual art gallery developed by a team using the ASP.NET framework, showcasing various artworks digitally."
+        },
+        "project6": {
+          "title": "Library Management System",
+          "description": "An online library management system designed for efficient handling of library operations and user management."
+        },
+        "project7": {
+          "title": "Chatroom Site",
+          "description": "A PHP-based chatroom site created as a group project, featuring user authentication and interactive chat capabilities."
+        },
+        "project8": {
+          "title": "Adventurelytical Game",
+          "description": "A 2D platformer coin rush game developed in Unity by a team of four, combining adventure and analytical challenges."
+        }
+      },
+      "common": {
+        "title": "My Projects",
+        "github": "GitHub",
+        "livePreview": "Live Preview",
+        "noAdditionalImages": "No additional images available.",
+        "close": "Close"
+      }
+  }
+  
+  
