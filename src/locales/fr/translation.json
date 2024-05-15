@@ -11,21 +11,23 @@
     "workExperience": {
       "title": "Expérience Professionnelle",
       "experience1": {
-        "date": "mars 2024 –- août 2024",
+        "date": "mars 2024 - août 2024",
         "company": "Opal-RT Technologies",
         "role": "Stagiaire IT/Applicatif",
         "responsibility1": "Défini et développé des scripts et interfaces pour améliorer le flux de travail des employés au sein de l'équipe Applications chez OPAL-RT.",
-        "responsibility2": "Surveillé les notifications d'application et fourni un support utilisateur, assurant la continuité opérationnelle et améliorant l'efficacité de l'équipe."
+        "responsibility2": "Surveillé les notifications d'application et fourni un support utilisateur, assurant la continuité opérationnelle et améliorant l'efficacité de l'équipe.",
+        "responsibility3": "Contribué aux projets d'infrastructure IT et aux scrums d'équipe."
       },
       "experience2": {
-        "date": "mai 2023 –- août 2023",
+        "date": "mai 2023 - août 2023",
         "company": "Wiptec Inc.",
         "role": "Associé d'Entrepôt",
         "responsibility1": "Effectué des tâches d'entrepôt, incluant la gestion des inventaires, l'exécution des commandes et la collaboration avec les membres de l'équipe.",
-        "responsibility2": "Opéré des équipements d'entrepôt spécialisés, contribuant à l'exécution sans faille des opérations."
+        "responsibility2": "Opéré des équipements d'entrepôt spécialisés, contribuant à l'exécution sans faille des opérations.",
+        "responsibility3": "Respecté les normes de sécurité et la sécurité au travail."
       },
       "experience3": {
-        "date": "juin 2022 –- avril 2023",
+        "date": "juin 2022 - avril 2023",
         "company": "Maxi",
         "role": "Caissier de Magasin d'Alimentation",
         "responsibility1": "Fourni un service clientèle exceptionnel avec une approche amicale.",
@@ -33,11 +35,12 @@
         "responsibility3": "Supervisé brièvement une équipe de magasin d'alimentation, assurant un fonctionnement fluide."
       },
       "experience4": {
-        "date": "août 2020 –- août 2021",
+        "date": "août 2020 - août 2021",
         "company": "Harvey's",
         "role": "Caissier",
         "responsibility1": "Géré les transactions en espèces et par carte de crédit avec précision et rapidité, maintenant un tiroir-caisse équilibré.",
-        "responsibility2": "Collaboré avec les membres de l'équipe pour maintenir un environnement de magasin propre et organisé."
+        "responsibility2": "Collaboré avec les membres de l'équipe pour maintenir un environnement de magasin propre et organisé.",
+        "responsibility3": "Amélioré la satisfaction des clients en résolvant les plaintes."
       }
     },
     "skills": {
@@ -46,9 +49,11 @@
       "databases": "Bases de Données",
       "programmingLanguages": "Langages de Programmation",
       "frameworks": "Frameworks",
-      "operatingSystems": "Systèmes d'Exploitation"
+      "operatingSystems": "Systèmes d'Exploitation",
+      "productivity": "Outil de productivité basé sur le cloud"
     },
     "hobbies": {
+      "languagepro": "Compétences linguistiques",
       "title": "Mes Loisirs",
       "cooking": {
         "title": "Cuisine",
@@ -77,7 +82,8 @@
       "sendMessage": "Envoyer le Message",
       "placeholderEmail": "johndoe@example.com",
       "placeholderSubject": "Bonjour...",
-      "placeholderMessage": "Parlons de..."
+      "placeholderMessage": "Parlons de...",
+      "findMeHere": "Trouvez-moi ici !"
     },
 
     "banner": {

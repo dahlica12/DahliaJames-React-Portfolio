@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 
 
 const Banner = () => {
-  const { t, ready } = useTranslation();
+  const { t, i18n, ready } = useTranslation();
   const [contentReady, setContentReady] = useState(false);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Banner = () => {
   if (!contentReady) {
     return <div>Loading...</div>; 
   }
-
+  const resumeLink = i18n.language === 'fr' ? '/Dahlia_James_Resume_Fr.pdf' : '/Dahlia_James_Resume.pdf';
   return (
     <section className="fullscreen-banner">
       <div className="video-container">
@@ -30,10 +30,12 @@ const Banner = () => {
           loop
           style={{
             position: "absolute",
-            width: "100%",
-            left: "50%",
             top: "50%",
-            height: "100%",
+            left: "50%",
+            width: "auto",
+            minWidth: "100%",
+            height: "auto",
+            minHeight: "100%",
             objectFit: "cover",
             transform: "translate(-50%, -50%)",
             zIndex: -1
@@ -54,7 +56,7 @@ const Banner = () => {
               Dahlia James
             </h1>
             <TypeAnimation
-              sequence={[t('banner.technicalSupport'), 2000, t('banner.softwareDevelopment'), 2000]}
+              sequence={['Technical Support', 2000, 'Software Development', 2000, 'Creative Technologist', 2000, 'Support Technique', 2000, 'Développement Logiciel', 2000, 'Technologue Créatif', 2000]}
               wrapper="div"
               cursor={true}
               repeat={Infinity}
@@ -67,7 +69,7 @@ const Banner = () => {
         </div>
 
         <div className="text-center absolute bottom-10 w-full">
-          <Link href="/Dahlia_James_Resume.pdf" className="inline-flex items-center justify-center bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out shadow-lg">
+        <Link href={resumeLink} className="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-900 hover:from-blue-700 hover:to-blue-300 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 ease-in-out shadow-lg">
             <span className="ml-3">{t('banner.downloadResume')}</span>
           </Link>
         </div>

@@ -107,7 +107,7 @@ const ProjectsSection = () => {
       id: 1,
       title: t("projects.project1.title"),
       description: t("projects.project1.description"),
-      defaultImage: "projectspic/rabiapatelart.png",
+      defaultImage: "projectspic/rabiapatelart2.png",
       tag: ["All", "Web"],
       gitUrl: "https://github.com/swafit/RabiaPatelArt",
       previewUrl: "http://rabiapatelart.com/",

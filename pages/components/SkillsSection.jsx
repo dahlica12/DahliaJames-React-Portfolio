@@ -32,7 +32,7 @@ return (
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <Image src="/skills/github.png" alt="Git" width={100} height={100} objectFit="contain" />
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Git</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Git Hub</p>
               </div>
               <div>
                 <Image src="/skills/docker.png" alt="Docker" width={100} height={100} objectFit="contain" />
@@ -40,7 +40,7 @@ return (
               </div>
               <div>
                 <Image src="/skills/jira.png" alt="Jira" width={100} height={100} objectFit="contain" />
-                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Jira</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Atlassian</p>
               </div>
               <div>
                 <Image src="/skills/intelliJ.png" alt="IntelliJ" width={100} height={100} objectFit="contain" />
@@ -49,6 +49,10 @@ return (
               <div>
                 <Image src="/skills/vscode.png" alt="VS Code" width={100} height={100} objectFit="contain" />
                 <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">VS Code</p>
+              </div>
+              <div>
+                <Image src="/skills/powershellISE.png" alt="powershellISE" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Windows Powershell</p>
               </div>
             </div>
           </div>
@@ -100,6 +104,10 @@ return (
                 <Image src="/skills/swift.jpg" alt="Swift" width={100} height={100} objectFit="contain" />
                 <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Swift</p>
               </div>
+              <div>
+                <Image src="/skills/powershell.png" alt="Powershell scripting" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Powershell Scripting</p>
+              </div>
             </div>
           </div>
       
@@ -123,6 +131,14 @@ return (
                 <Image src="/skills/angular.png" alt="Angular" width={100} height={100} objectFit="contain" />
                 <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Angular</p>
               </div>
+              <div>
+                <Image src="/skills/nextjs.png" alt="Next js" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Next js</p>
+              </div>
+              <div>
+                <Image src="/skills/podeweb.png" alt="Pode Web" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Pode Web</p>
+              </div>
             </div>
           </div>
 
@@ -141,6 +157,21 @@ return (
               <div>
                 <Image src="/skills/linux.png" alt="Linux" width={100} height={100} objectFit="contain" />
                 <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Linux</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Productivity Suite */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">{t('skills.productivity')}</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <Image src="/skills/office365.jpg" alt="Office 365" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Microsoft 365</p>
+              </div>
+              <div>
+                <Image src="/skills/google.png" alt="Google" width={100} height={100} objectFit="contain" />
+                <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">Google Workspace</p>
               </div>
             </div>
           </div>

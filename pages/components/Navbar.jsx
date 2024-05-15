@@ -32,7 +32,7 @@ const Navbar = ({ lightMode, setLightMode }) => {
   };
 
   return (
-    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-white bg-opacity-100">
+    <nav className="fixed mx-auto border border-[#33353F] top-0 left-0 right-0 z-10 bg-red-200 bg-opacity-100">
   <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
     <Link
       href={"/"}
@@ -78,13 +78,13 @@ const Navbar = ({ lightMode, setLightMode }) => {
         {navLinks.map((link, index) => (
           <li key={index} className="flex items-center">
             {link.title !== "Contact" ? (
-    <NavLink href={link.path} title={link.title} />
+    <NavLink href={link.path} title={link.title} className="hover:text-blue-800"/>
   ) : (
     <div className="flex items-center">
-      <NavLink href={link.path} title={link.title} />
+      <NavLink href={link.path} title={link.title} className="hover:text-blue-800"/>
       <BsFillCloudMoonFill
         onClick={() => setLightMode(!lightMode)}
-        className={`ml-3 cursor-pointer text-xl md:text-3xl ${lightMode ? "text-gray-900" : "text-gray-600"}`} // Adjust icon color based on light mode
+        className={`ml-3 cursor-pointer text-xl md:text-3xl ${lightMode ? "text-gray-900" : "text-gray-600"}`} 
       />
     </div>
   )}
