@@ -11,21 +11,23 @@
     "workExperience": {
       "title": "Work Experience",
       "experience1": {
-        "date": "March 2024 -- Aug 2024",
+        "date": "March 2024 - Aug 2024",
         "company": "Opal-RT Technologies",
         "role": "IT/Applicatif Intern",
         "responsibility1": "Defined and developed scripts and interfaces for enhancing employee workflow within the Applications team at OPAL-RT.",
-        "responsibility2": "Monitored application notifications and provided user support, ensuring operational continuity and enhancing team efficiency."
+        "responsibility2": "Developed and optimized Power Automate flows to enhance process automation and efficiency.",
+        "responsibility3": "Contributed to IT infrastructure projects and team scrums."
       },
       "experience2": {
-        "date": "May 2023 -- Aug 2023",
+        "date": "May 2023 - Aug 2023",
         "company": "Wiptec Inc.",
         "role": "Warehouse Associate",
         "responsibility1": "Performed warehouse duties, including inventory management, order fulfillment, and collaboration with team members.",
-        "responsibility2": "Operated specialized warehouse equipment, contributing to the seamless execution of operations."
+        "responsibility2": "Operated specialized warehouse equipment, contributing to the seamless execution of operations.",
+        "responsibility3": "Upheld safety standards and workplace security."
       },
       "experience3": {
-        "date": "Jun 2022 -- Apr 2023",
+        "date": "Jun 2022 - Apr 2023",
         "company": "Maxi",
         "role": "Grocery Store Cashier",
         "responsibility1": "Provided outstanding customer service with a friendly approach.",
@@ -33,11 +35,12 @@
         "responsibility3": "Briefly supervised a grocery store team, ensuring smooth operations."
       },
       "experience4": {
-        "date": "Aug 2020 -- Aug 2021",
+        "date": "Aug 2020 - Aug 2021",
         "company": "Harvey's",
         "role": "Cashier",
         "responsibility1": "Handled cash and credit card transactions with accuracy and speed, maintaining a balanced cash drawer.",
-        "responsibility2": "Collaborated with team members to maintain a clean and organized store environment."
+        "responsibility2": "Collaborated with team members to maintain a clean and organized store environment.",
+        "responsibility3": "Enhanced guest satisfaction by resolving complaints."
       }
     },
     "skills": {
@@ -46,9 +49,11 @@
       "databases": "Databases",
       "programmingLanguages": "Programming Languages",
       "frameworks": "Frameworks",
-      "operatingSystems": "Operating Systems"
+      "operatingSystems": "Operating Systems",
+      "productivity": "Cloud-based productivity tools"
     },
     "hobbies": {
+      "languagepro": "Language Proficiency",
       "title": "My Hobbies",
       "cooking": {
         "title": "Cooking",
@@ -77,7 +82,8 @@
       "sendMessage": "Send Message",
       "placeholderEmail": "johndoe@example.com",
       "placeholderSubject": "Hello...",
-      "placeholderMessage": "Let's talk about..."
+      "placeholderMessage": "Let's talk about...",
+      "findMeHere": "Find me here!"
     },
 
     "banner": {
