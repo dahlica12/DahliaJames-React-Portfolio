@@ -144,6 +144,9 @@
       "livePreview": "Aperçu en Direct",
       "noAdditionalImages": "Aucune image supplémentaire disponible.",
       "close": "Fermer"
+    },
+    "footer": {
+      "copyrightText": "Tous droits réservés."
     }
 
     

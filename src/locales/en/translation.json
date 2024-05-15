@@ -146,6 +146,9 @@
         "livePreview": "Live Preview",
         "noAdditionalImages": "No additional images available.",
         "close": "Close"
+      },
+      "footer": {
+        "copyrightText": "All rights reserved."
       }
   }
   
